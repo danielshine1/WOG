@@ -1,0 +1,23 @@
+<!-- templates/memory_game_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">Memory Game Result</h1>
+
+        {% if result %}
+            <p>Congratulations! You guessed the correct sequence.</p>
+        {% else %}
+            <p>Sorry, the correct sequence was {{ sequence }}. Better luck next time.</p>
+        {% endif %}
+
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

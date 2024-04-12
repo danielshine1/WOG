@@ -1,0 +1,20 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<div id="container">
+    <h1 class="title">Blind Guess Game</h1>
+    <div id="GuessGame">
+        <p>Guess a Number between 1 and {{ game.get_Difficulty() }}</p>
+        <form action="/play" method="POST">
+            <p id="diff"> Difficulty {{ game.get_Difficulty() }} </p>
+            <p></p>
+            <input class="lginp" id="Guess" name="Guess" type="text" placeholder="Insert Guess">
+            <h3></h3>
+            <button class="prod">Submit Guess</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

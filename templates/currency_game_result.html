@@ -1,0 +1,27 @@
+<!-- templates/currency_game_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Roulette Game Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">Currency Roulette Game Result</h1>
+
+        {% if result %}
+            <p>Congratulations! You guessed the correct interval.</p>
+        {% else %}
+            <p>Sorry, your guess was not within the correct interval.</p>
+        {% endif %}
+
+        <p>Exchange rate: 1 USD = {{ exchange_rate }} ILS</p>
+        <p>Generated value in USD: {{ secret_value }}</p>
+        <p>Your guess: {{ user_guess }}</p>
+
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
